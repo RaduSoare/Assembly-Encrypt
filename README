@@ -1,0 +1,46 @@
+
+
+Student : Soare Radu-Georgian
+Grupa : 323CD
+Tema 2 - IOCLA : Stegano
+
+Task1:
+- elementele din imagine au fost accesate dupa formula [img + i * img_width + j]
+- au fost incercate toate cheile ce puteau fi scrise pe un byte [0..255]
+- se itereaza prin matrice si se face xor intre fiecare element de pe linie 
+si cheia incercata
+- se cauta mesajul pe linia modificata:
+	* se compara caracter cu caracter hintWord-ul cu elementele de pe linie
+	si se numara numarul maxim de elemente consecutive egale
+	* daca acest maxim e egal cu numarul de caractere din hint, inseamna ca
+	mesajul a fost gasit pe linia respectiva
+- daca a fost gasit mesajul, acesta se afiseaza impreuna cu linia si cheia
+- daca mesajul nu a fost gasit, linia se reface prin efectuare de xor
+cu aceeasi cheie si se continua iterarea prin matrice
+
+Task2:
+- se aplica aceeasi cheie gasita la taskul 1 pe toata matricea pentru a obtine
+imaginea originala
+- de la task-ul anterior, linia pe care s-a gasit mesajul nu a fost refacuta, 
+asa ca e nevoie de inca un xor pe aceasta
+- se introduce mesajul pe linia imediat urmatoare liniei gasite la taskul anterior
+	* se introduce byte cu byte de la inceputul liniei pana se ajunge la terminator
+- se calculeaza noua cheie
+- se aplica pe toata matricea
+- se afiseaza imaginea
+
+Task3:
+- se retin in .data codurile morse pentru fiecare caracter necesar encryptarii
+- se parcurge mesajul caracter cu caracter si se transforma in codul morse
+corespunzator
+- fiecare caracter din codul morse este adaugat ca un element in matricea 
+imaginii de la byte-ul primit ca parametru
+
+Task5:
+- itereaza prin matrice de la byte-ul primit ca parametru si verifica cel
+mai nesemnificativ bit
+- sunt considerate grupari de cate 8 LSBiti pentru a forma un numar ce va
+reprezenta codul ascii al unui caracter
+- altfel cei 8 biti sunt transformati in {0 sau 1} * 2 ^ indexul bitului
+din numar, apoi sunt adunati si formeaza astfel un caracter din mesajul cautat
+- caracterele astfel formate sunt afisate pana la gasirea terminatorului
