@@ -1,9 +1,4 @@
 
-
-Student : Soare Radu-Georgian
-Grupa : 323CD
-Tema 2 - IOCLA : Stegano
-
 Task1:
 - elementele din imagine au fost accesate dupa formula [img + i * img_width + j]
 - au fost incercate toate cheile ce puteau fi scrise pe un byte [0..255]
